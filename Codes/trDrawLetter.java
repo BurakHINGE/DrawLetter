@@ -8,6 +8,9 @@ public class trDrawLetter {
         System.out.println("Çizmek istediğinizi harfi giriniz(W,X,Y,Z): ");
         String letter = input.nextLine().toUpperCase();
 
+        System.out.println("Hangi karakter ile çizmek istersiniz: ");
+        char choice = input.next().charAt(0);
+
         while (!letter.equals("X") &&
          !letter.equals("Y") &&
           !letter.equals("Z") &&
@@ -28,69 +31,61 @@ public class trDrawLetter {
                 System.out.println("Lütfen çift olmayan bir sayı giriniz: ");
                 size = input.nextInt();
             }
-
         }
 
         if (letter.equals("X")) {
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
                     if (i == j || j == (size -1 -i)) {
-                        System.out.print("*");
+                        System.out.print(choice);
                     }
                     else {
                         System.out.print(" ");
                     }
-
                 }
                 System.out.println();
             }
         }
-
 
         else if (letter.equals("Y")) {
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
                     if (i < (size/2)) {
                         if (i == j || j == (size -1 -i)) {
-                            System.out.print("*");
-                    }
+                            System.out.print(choice);
+                        }
                         else {
                             System.out.print(" ");
-                    }
+                        }
                     }
                     else {
                         if (j == (size/2)) {
-                            System.out.print("*");
+                            System.out.print(choice);
                         }
                         else {
                             System.out.print(" ");
                         }
                     }
-
-                    
-
                 }
                 System.out.println();
             }
-                
-                
+  
             }
         else if (letter.equals("Z")) {
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
                     if (i == 0 || i == size - 1) { // üst ve alt satır
-                        System.out.print("*");
-        } 
+                        System.out.print(choice);
+                    } 
                     else if (j == size - 1 - i) { // çapraz
-                        System.out.print("*");
-        } 
+                        System.out.print(choice);
+                    } 
                     else {
                        System.out.print(" ");
-        }
-    }
+                    }
+                }
             System.out.println();
-}
-
+            }
         }
 
         else if (letter.equals("W")) {
@@ -99,27 +94,22 @@ public class trDrawLetter {
 
         // Sol üst çapraz
         if (j == i) {
-            System.out.print("*");
+            System.out.print(choice);
         }
         // Sağ üst çapraz
         else if (j == size*2 - 2 - i) {
-            System.out.print("*");
+            System.out.print(choice);
         }
         // Alt çaprazlar
         else if (i >= size/2 && (j == i || j == size*2-2-i)) {
-            System.out.print("*");
+            System.out.print(choice);
         }
         else {
             System.out.print(" ");
         }
-
     }
-    System.out.println();
+                System.out.println();
+            }
+        }
+    }
 }
-
-
-        }
-
-        }
-
-    }
